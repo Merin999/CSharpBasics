@@ -1,6 +1,6 @@
 ﻿class Program
 {
-    static void Main()
+    static void Day1()
     {
         int age = 27;
         double salary = 41000.50;
@@ -15,4 +15,23 @@
         Console.WriteLine("Grade: " + grade);
     }
 
+    static void Day2()
+    {
+        Console.Write("Enter your age ");
+        int age = int.Parse(Console.ReadLine());
+        if(age >= 18)
+        {
+            Console.WriteLine("Eligible");
+        }
+        else
+        {
+            Console.WriteLine("Not Eligible");
+        }
+    }
+
+
+    static void Main()
+    {
+        Day2();
+    }
 }
