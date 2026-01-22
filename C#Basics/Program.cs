@@ -1,43 +1,43 @@
 ﻿class Program
 {
 
-    static void Main()
-    {
-        //Day1();
-        //Day2();
-        //Day3();
+    //static void Main()
+    //{
+    //    //Day1();
+    //    //Day2();
+    //    //Day3();
 
-        //Day-4
+    //    //Day-4
 
-        //-----print even numbers----s
-        //PrintEvenNumbers(20);
-        //Multiply(5, 10);
-        //bool isAdult = IsAdult(22);
-        //Console.WriteLine(isAdult);
+    //    //-----print even numbers----s
+    //    //PrintEvenNumbers(20);
+    //    //Multiply(5, 10);
+    //    //bool isAdult = IsAdult(22);
+    //    //Console.WriteLine(isAdult);
 
-        //Day5
+    //    //Day5
 
-        //----age print----
-        //List<int> ages = new List<int>();
-        //ages.Add(10);
-        //ages.Add(20);
-        //ages.Add(27);
-        //ages.Add(89);
-        //ages.Add(2);
-        //Printadults(ages);
-        //Console.WriteLine(ages.Count);      // number of items
-        //ages.Remove(18);                    // removes first match
-        //bool has22 = ages.Contains(22);     // true / false
+    //    //----age print----
+    //    //List<int> ages = new List<int>();
+    //    //ages.Add(10);
+    //    //ages.Add(20);
+    //    //ages.Add(27);
+    //    //ages.Add(89);
+    //    //ages.Add(2);
+    //    //Printadults(ages);
+    //    //Console.WriteLine(ages.Count);      // number of items
+    //    //ages.Remove(18);                    // removes first match
+    //    //bool has22 = ages.Contains(22);     // true / false
 
-        //----StringPrint();----
-        //List<int> marks = new List<int>();
-        //marks.Add(80);
-        //marks.Add(100);
-        //marks.Add(40);
-        //marks.Add(60);
-        //marks.Add(70);
-        //Marks(marks);
-    }
+    //    //----StringPrint();----
+    //    //List<int> marks = new List<int>();
+    //    //marks.Add(80);
+    //    //marks.Add(100);
+    //    //marks.Add(40);
+    //    //marks.Add(60);
+    //    //marks.Add(70);
+    //    //Marks(marks);
+    //}
     static void Day1()
     {
         int age = 27;
@@ -164,6 +164,7 @@
         }
     }
 
+    //Marks
     static void Marks(List<int>marks)
     {
         int total = 0;
@@ -179,4 +180,37 @@
         Console.WriteLine($"Total marks : {total}");
         Console.WriteLine($"Average mark : {average}");
     }
+
+    //Day 6
+    //Class & Objects
+    //High Earner
+    class Employee
+    {
+        public int Id;
+        public string Name;
+        public int Salary;
+        public bool IsHighEarner()
+        {
+            return Salary >= 50000;
+        }
+    }
+    static void Main()
+    {
+        List<Employee> employees = new List<Employee>
+        {
+            new Employee {Id = 1, Name = "Merin", Salary = 100000 },
+            new Employee {Id = 2, Name = "Eldhose", Salary = 200000 },
+            new Employee {Id = 3, Name = "Anna", Salary = 20000}
+
+        };
+        foreach (Employee employee in employees)
+        {
+            if(employee.IsHighEarner())
+            {
+                Console.WriteLine($"{employee.Name} is High earner");
+            }
+        }
+    }
+        
+    
 }
