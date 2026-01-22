@@ -1,5 +1,13 @@
 ﻿class Program
 {
+
+    static void Main()
+    {
+        PrintEvenNumbers(20);
+        Multiply(5, 10);
+        bool isAdult = IsAdult(22);
+        Console.WriteLine(isAdult);
+    }
     static void Day1()
     {
         int age = 27;
@@ -71,12 +79,32 @@
         else
         {
             Console.WriteLine("Invalid Input");
-        }
-        
+        }   
     }
 
-    static void Main()
+    //Day 4
+    //print even numbers
+    static void PrintEvenNumbers(int limit)
     {
-        Day3();
+        for (int i = 2; i <= limit; i = i+2)
+        {
+            Console.WriteLine(i);
+        }
+        int x = 2;
+        while(limit>=x)
+        {
+            Console.WriteLine(x);
+            x=x+2;
+        }
+    }
+    //Multiply
+    static void Multiply(int a, int b)
+    {
+        Console.WriteLine($"{a} * {b} = {a*b}");
+    }
+    //IsAdult
+    static bool IsAdult(int age)
+    {
+        return age >= 18;
     }
 }
