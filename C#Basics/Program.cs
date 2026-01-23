@@ -158,23 +158,23 @@
         {
         "merin","eldhose","anna"
         };
-        foreach(string name in names)
+        foreach (string name in names)
         {
             Console.WriteLine(name);
         }
     }
 
     //Marks
-    static void Marks(List<int>marks)
+    static void Marks(List<int> marks)
     {
         int total = 0;
         foreach (int mark in marks)
         {
-            if(mark >= 50)
+            if (mark >= 50)
             {
                 Console.WriteLine(mark);
             }
-            total += mark;  
+            total += mark;
         }
         double average = total / marks.Count;
         Console.WriteLine($"Total marks : {total}");
@@ -182,35 +182,92 @@
     }
 
     //Day 6
+
     //Class & Objects
+
     //High Earner
+    //class Employee
+    //{
+    //    public int Id;
+    //    public string Name;
+    //    public int Salary;
+    //    public bool IsHighEarner()
+    //    {
+    //        return Salary >= 50000;
+    //    }
+    //}
+    //static void Main()
+    //{
+    //    List<Employee> employees = new List<Employee>
+    //    {
+    //        new Employee {Id = 1, Name = "Merin", Salary = 100000 },
+    //        new Employee {Id = 2, Name = "Eldhose", Salary = 200000 },
+    //        new Employee {Id = 3, Name = "Anna", Salary = 20000}
+    //    };
+    //    foreach (Employee employee in employees)
+    //    {
+    //        if(employee.IsHighEarner())
+    //        {
+    //            Console.WriteLine($"{employee.Name} is High earner");
+    //        }
+    //    }
+    //}
+
+    //Student Result System
+    //class Student
+    //{
+    //    public int Id;
+    //    public string Name;
+    //    public int Mark;
+    //    public bool IsPass()
+    //    {
+    //        return Mark >= 50;
+    //    }
+    //}
+
+    //static void Main()
+    //{
+    //    List<Student> students = new List<Student>
+    //    {
+    //        new Student { Id = 1, Name = "Merin", Mark = 30 },
+    //        new Student { Id = 2, Name = "Eldhose", Mark = 100 },
+    //        new Student { Id = 3, Name = "Anna", Mark = 80 }
+    //    };
+    //    int passCount = 0;
+    //    foreach (Student student in students)
+    //    {
+    //        if(student.IsPass())
+    //        {
+    //            Console.WriteLine($"{student.Name} passed exam");
+    //        }
+    //        passCount++;
+    //    }
+    //    Console.WriteLine($"number of students passed exam is {passCount}");
+    //}
+
+    //Employee Bonus
+
     class Employee
     {
-        public int Id;
         public string Name;
         public int Salary;
-        public bool IsHighEarner()
+        public int GetBonusPercentage()
         {
-            return Salary >= 50000;
+            return Salary >= 60000 ? 10 : 5;
         }
     }
     static void Main()
     {
         List<Employee> employees = new List<Employee>
         {
-            new Employee {Id = 1, Name = "Merin", Salary = 100000 },
-            new Employee {Id = 2, Name = "Eldhose", Salary = 200000 },
-            new Employee {Id = 3, Name = "Anna", Salary = 20000}
-
+            new Employee {Name = "Merin", Salary = 50000},
+            new Employee {Name = "Eldhose", Salary = 70000},
+            new Employee {Name = "Anna", Salary = 60000}
         };
         foreach (Employee employee in employees)
         {
-            if(employee.IsHighEarner())
-            {
-                Console.WriteLine($"{employee.Name} is High earner");
-            }
+            double bonusAmount = (employee.Salary * employee.GetBonusPercentage()) / 100;
+            Console.WriteLine($"{employee.Name} has bonus {bonusAmount}");
         }
     }
-        
-    
 }
