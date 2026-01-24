@@ -247,27 +247,70 @@
 
     //Employee Bonus
 
-    class Employee
+    //class Employee
+    //{
+    //    public string Name;
+    //    public int Salary;
+    //    public int GetBonusPercentage()
+    //    {
+    //        return Salary >= 60000 ? 10 : 5;
+    //    }
+    //}
+    //static void Main()
+    //{
+    //    List<Employee> employees = new List<Employee>
+    //    {
+    //        new Employee {Name = "Merin", Salary = 50000},
+    //        new Employee {Name = "Eldhose", Salary = 70000},
+    //        new Employee {Name = "Anna", Salary = 60000}
+    //    };
+    //    foreach (Employee employee in employees)
+    //    {
+    //        double bonusAmount = (employee.Salary * employee.GetBonusPercentage()) / 100;
+    //        Console.WriteLine($"{employee.Name} has bonus {bonusAmount}");
+    //    }
+    //}
+
+    //Day 7
+    class BankAccount
     {
-        public string Name;
-        public int Salary;
-        public int GetBonusPercentage()
+        public string AccountNumber { get;private set; }
+        public double Balance { get; private set; }
+        public BankAccount(string accountNumber, double initialBalance)
         {
-            return Salary >= 60000 ? 10 : 5;
+            Balance = initialBalance >= 0 ? initialBalance : 0;
+            AccountNumber = accountNumber;
+        }
+        public void Deposit(double amount)
+        {
+            if(amount > 0)
+            {
+                Balance += amount;
+            }
+        }
+        public bool Withdraw(double amount)
+        {
+            if (amount > 0 && amount < Balance) 
+            {
+                Balance -= amount;
+                return true;
+            }
+            return false;
         }
     }
     static void Main()
     {
-        List<Employee> employees = new List<Employee>
-        {
-            new Employee {Name = "Merin", Salary = 50000},
-            new Employee {Name = "Eldhose", Salary = 70000},
-            new Employee {Name = "Anna", Salary = 60000}
-        };
-        foreach (Employee employee in employees)
-        {
-            double bonusAmount = (employee.Salary * employee.GetBonusPercentage()) / 100;
-            Console.WriteLine($"{employee.Name} has bonus {bonusAmount}");
-        }
+        BankAccount acc1 = new BankAccount("ACC01", 50000);
+        BankAccount acc2 = new BankAccount("ACC02", 10000);
+
+        acc1.Deposit(10000);
+        acc1.Withdraw(5000);
+
+        acc2.Deposit(10000);
+        acc2.Withdraw(100000);
+
+        Console.WriteLine($"Account {acc1.AccountNumber} has balance {acc1.Balance}");
+        Console.WriteLine($"Account {acc2.AccountNumber} has balance {acc2.Balance}");
     }
+
 }
